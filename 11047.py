@@ -6,7 +6,7 @@ for i in range (n) :
   A[i] = int(input())
   
 result = 0
-for i in range(n-1, 0, -1) :
+for i in range(n-1, -1, -1) :
   result += k//A[i]
   k = k % A[i]
 

@@ -2,10 +2,11 @@ import sys
 
 n = list(map(int, sys.stdin.readline().split()))
 
-a = set()  # 1,2,3.. 마을 수 
+a = []  # 1,2,3.. 마을 수 
 texi = [None]*n[1]  # 택시 가능 마을과 요금
 for i in range (1,n[0]+1) : # 1~마을수 
-    a.add(i)
+    a.append(i)
+    a.append(i)
 b = [None]*n[1]
 for i in range (n[1]) :
     texi[i] = sys.stdin.readline().split()
@@ -25,11 +26,11 @@ for i in range(n[1]):
            
 result = 0
 for i in range(n[1]):
-    a.discard(int(c[i][0]))
-    a.discard(int(c[i][1]))
+    a.remove(int(c[i][0]))
+    a.remove(int(c[i][1]))
     result += int(c[i][2])
 
-    if a == set() :
+    if len(a) == 2 :
         break            
        
 print(result)

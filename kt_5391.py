@@ -16,4 +16,7 @@ while True :
     if (a+1)%2 == b :
         a+=1
         count += 1
+    if (a-1)%2 == b :
+        a-=1
+        count += 1
 print(int(count))

@@ -6,10 +6,8 @@ queue = deque()
 for i in range(n) :
     queue.append(i+1)
 
-while True :
+while len(queue) > 1 :
     queue.popleft()
     queue.append(queue.popleft())
-    if len(queue) == 1 :
-        break
-
+    
 print(queue[0])

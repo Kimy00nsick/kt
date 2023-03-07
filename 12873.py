@@ -8,18 +8,15 @@ for i in range(n) :
     a.append(i+1)
 
 
-a.popleft() 
-for i in range(1,n-1) :
-    t = ((i+1)**3)%len(a)
-    for i in range(t-1) :
-        a.append(a.popleft())
+for i in range(1,n+1) :
+    t = (i**3%len(a))-1
+    a.rotate(-t)
     a.popleft()
+    if len(a) == 1:
+        break
+
 
 if n == 1 :
-    print(1)
-elif n ==2 :
-    print(2)
-elif n == 3 :
-    print(2)
+    print(1)    
 else :
     print(a[0])

@@ -4,21 +4,21 @@ from collections import deque
 n = int(sys.stdin.readline())
 skill = sys.stdin.readline().strip()
 que = deque(skill)
-arr = []
+arr = deque()
 for i in range(n) :
     if que[0] == 'R' :
         if 'L' not in arr :
             break
         else :
-            arr.remove('R')
             arr.append('R')
+            arr.remove('L')
             que.popleft()
     elif que[0] == 'K' :
         if 'S' not in arr :
             break
         else :
-            arr.remove('S')
             arr.append('K')
+            arr.remove('S')
             que.popleft()
     else :
         arr.append(que.popleft())

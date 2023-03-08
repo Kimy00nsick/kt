@@ -33,6 +33,6 @@ while True :
         cal.popleft()
         num.append(rs)
     
-print(num)
+print(num[0])
 
         
